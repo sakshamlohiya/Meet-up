@@ -398,8 +398,7 @@ const { ObjectId } = require('mongodb').ObjectId;
 
 async function main() {
 	
-	const uri = process.env.MONGODB_URI;
-	const client = new MongoClient(uri, {
+	const client = new MongoClient(url, {
 		useUnifiedTopology: true,
 		useNewUrlParser: true,
 	});

@@ -1,0 +1,93 @@
+<!doctype html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>calendar</title>
+    <link rel="stylesheet" href="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.css">
+    <script src="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js"></script>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            /* overflow: hidden; */
+        }
+        footer{
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function init() {
+            scheduler.config.xml_date = "%Y-%m-%d %H:%i";
+            scheduler.init("scheduler_here", new Date(), "month");
+            // enables the dynamic loading
+            scheduler.setLoadMode("day");
+
+            // load data from backend
+            scheduler.load("/data", "json");
+            // connect backend to scheduler
+            var dp = new dataProcessor("/data");
+            // set data exchange mode
+            dp.init(scheduler);
+            dp.setTransactionMode("POST", false);
+        }
+
+        function openNav() {
+            document.getElementById('scheduler_here').style.zIndex = '-1';
+            document.getElementById("mysidenav").style.width = "250px";
+
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+            document.getElementById("mysidenav").style.width = "0";
+            document.getElementById('scheduler_here').style.zIndex = '0';
+
+        }
+    </script>
+</head>
+
+<body onload="init();">
+    <header id="main">
+        <nav class="navbar">
+            <span onclick="openNav()">&#9776;</span>
+            <li><a href="/mainpage">Home</a></li>
+            <li><a href="/conference">Join-a-Video-Conference</a></li>
+            <li><a href="/chati">Chat</a></li>
+            <li style="position: absolute; right: 100px;"><a href="/calendar">Calendar</a></li>
+            <li style="position: absolute; right: 20px;"><a href="/logout">Logout</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+        </nav>
+    </header>
+    <div class="sidenav" id="mysidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1 id="Info"><%= name%></h1>
+        <a href="/mainpage">About</a>
+        <a href="/conference">Join-a-Video-Conference</a>
+        <a href="chati">Chat</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
+        <div class="dhx_cal_navline">
+            <div class="dhx_cal_prev_button">&nbsp;</div>
+            <div class="dhx_cal_next_button">&nbsp;</div>
+            <div class="dhx_cal_today_button"></div>
+            <div class="dhx_cal_date"></div>
+            <div class="dhx_cal_tab" name="day_tab"></div>
+            <div class="dhx_cal_tab" name="week_tab"></div>
+            <div class="dhx_cal_tab" name="month_tab"></div>
+        </div>
+        <div class="dhx_cal_header">
+        </div>
+        <div class="dhx_cal_data">
+        </div>
+    </div>
+</body>
+<footer style="background-color: black;color: whitesmoke; text-align: center; font-size: 20px; padding: 9px 20px;">All
+    rights &copy; reserved for Meet-chord Only
+</footer>

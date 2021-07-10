@@ -1,0 +1,7 @@
+# server/node_modules
+# server/.emv
+# client/node_modules
+# client/.emv
+
+node_modules
+.env

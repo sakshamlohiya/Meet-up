@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Conference </title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <style>
+        #selectRoom{
+            background-color: rgb(7,30,110);
+            color: whitesmoke;
+            display: block;
+            padding: 40px;
+        }
+        #roomNumber{
+            border-radius: 10px;
+        }
+        .ri{
+            list-style: disc;
+            font-size: 20px;
+        }
+        img{
+            width: 97vw;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <header id="main">
+        <nav class="navbar">
+            <span onclick="openNav()">&#9776;</span>
+            <li><a href="/mainpage">Home</a>
+            <li><a href="/conference">Join-a-Video-Conference</a></li>
+            <li><a href="/chati">Chat</a></li>
+            <li style="position: absolute; right: 100px;"><a href="/calendar">Calendar</a></li>
+            <li style="position: absolute; right: 20px;"><a href="/logout">Logout</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+        </nav>
+    </header>
+    <div>
+        <h1>Video conferrence with someone at a touch</h1>
+    </div>
+    <div class="sidenav" id="mysidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1 id="Info"><%= name%></h1>
+        <a href="/mainpage">About</a>
+        <a href="/conference">Join-a-Video-Conference</a>
+        <a href="/chati">Chat</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+
+
+    <div id="selectRoom">
+        <label style="font-size: large; font-weight: bold;">Type the room number:</label>
+        <input id="roomNumber" type="text" placeholder="#1111" />
+        <button id="goRoom">Enter conferrence</button>
+    </div>
+
+    <div id="consultingRoom" style="display:none">
+        <video id="localVideo" autoplay></video>
+        <video id="remoteVideo" autoplay></video>
+        <form action="/leave" method="post">
+            <button id="Leave" class="btnc">Leave</button>
+        </form>
+        <button id="Mic" class="btnc">Mic</button>
+        <button id="Video" class="btnc">Video</button>
+    </div>
+    <div>
+        <h1 style="margin-top: 100px;">Room Number Details:</h1>
+        <ul>
+            <li class="ri">The code should be of 5 digits</li>
+            <li class="ri">The first digit should be a '#'</li>
+            <li class="ri">The other 4 digit can be any combination of 4 digits</li>
+            <li class="ri">Please leave the room by clicking leave button</li>
+        </ul>
+        <img src="/image/m4.jpg" alt="" srcset="">
+    </div>
+    <footer style="background-color: black;color: whitesmoke; text-align: center; font-size: 20px; padding: 9px 20px;">All
+        rights &copy; reserved for Meet-chord Only
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+
+<script>
+    function openNav() {
+        document.getElementById("mysidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mysidenav").style.width = "0";
+    }
+</script>
+
+
+
+</html>

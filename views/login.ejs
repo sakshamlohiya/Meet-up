@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .para1 {
+            padding: 20px;
+        }
+
+        .container-right {
+            text-align: center;
+            color: rgb(30, 8, 107);
+            width: 70vw;
+            height: 100vh;
+            background-color: white;
+            border-right: 2px solid black;
+        }
+
+        .container-left {
+            text-align: center;
+            width: 30vw;
+            height: 100vh;
+            background-color: rgb(30, 8, 107);
+            color: white;
+            position: absolute;
+            right: 0px;
+            padding-top: 20vw;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            padding: 10px;
+
+        }
+
+        .form-i {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            width: 100px;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            display: block;
+            margin: 10px auto;
+
+
+        }
+        img{
+            padding: 100px;
+            width: 50vw;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-right">
+            <p class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut atque repudiandae explicabo
+                enim deleniti
+                excepturi obcaecati voluptate ut nam rem blanditiis, sed odio esse et molestiae temporibus maiores quia
+                cumque ipsa nostrum exercitationem repellendus laboriosam aliquid reiciendis. Eos dicta quisquam quia
+                doloremque molestias, similique, aliquam ullam consequatur suscipit corporis placeat.
+            </p>
+            <img src="/image/intro.png" alt="Conference Picture" srcset="">
+            <p class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut atque repudiandae explicabo
+                enim deleniti
+                excepturi obcaecati voluptate ut nam rem blanditiis, sed odio esse et molestiae temporibus maiores quia
+                cumque ipsa nostrum exercitationem repellendus laboriosam aliquid reiciendis. Eos dicta quisquam quia
+                doloremque molestias, similique, aliquam ullam consequatur suscipit corporis placeat.
+            </p>
+        </div>
+        <div class="container-left">
+            <h1> LOGIN </h1>
+            <form class='form' action="/login" method="POST">
+                <input class="form-i" type="text" name="username" placeholder="username">
+                <input class='form-i' type="password" name="password" placeholder="password">
+
+                <button class="btn">Submit</button>
+            </form>
+
+            <li style="color: white;"><a href="/" , style="color: white;">Sign Up for New Account</a></li>
+            <br>
+            <li style="color: white;"><a href="/forgot" , style="color: white;">Forgot password</a></li>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

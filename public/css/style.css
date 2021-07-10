@@ -1,0 +1,208 @@
+
+.navbar {
+    display: flex;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(7, 30, 110);
+    color: whitesmoke;
+}
+
+li,
+span {
+    padding: 10px;
+    list-style: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+.page-container{
+    display: flex;
+}
+.left{
+    margin: 10px;
+}
+
+
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* @media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+} */
+
+#goRoom{
+    padding: 10px;
+    font-size: large;
+    background-color: rgb(7, 30, 110);
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+}
+.btn{
+    
+        padding: 10px;
+        font-size: large;
+        background-color: rgb(7, 30, 110);
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+        position: absolute;
+        top: 90vh;
+        
+    
+    
+}
+#roomNumber{
+    border: 2px solid black;
+    padding: 5px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.para1{
+    padding: 20px;
+}
+
+.container-right {
+    color: rgb(30, 8, 107);
+    width: 70vw;
+    height: 100vh;
+    background-color: white;
+    border-right: 2px solid black;
+    /* padding: 20px; */
+}
+
+.container-left {
+    width: 30vw;
+    height: 100vh;
+    background-color: rgb(30, 8, 107);
+    color: white;
+    position: absolute;
+    right: 0px;
+    padding-top: 20vw;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+
+}
+.form-i{
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.btn{
+    padding: 10px;
+    width: 100px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+.btnc{
+    padding: 10px;
+    width: 100px;
+    background-color: rgb(7, 30, 110);
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    color: whitesmoke;
+
+
+}
+
+#Leave{
+    position: absolute;
+    top: 80vh;
+    left: 0px;
+}
+
+
+#Mic{
+    position: absolute;
+    top: 80vh;
+    left: 100px;
+}
+
+
+#Video{
+    position: absolute;
+    top: 80vh;
+    left: 200px;
+}
+
+#Info{
+    color: whitesmoke;
+    padding: 20px;
+    margin: 10px;
+    font-weight: bolder;
+    
+}
+
+
+
+

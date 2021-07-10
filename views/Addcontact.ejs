@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Contact</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .contact-box {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #contact {
+            display: flex;
+        }
+
+        #Addcontact {
+            height: 100vh;
+            border-left: 5px solid rgb(7, 30, 110);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #DisplayContact {
+            width: 75%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            font-weight: bolder;
+            font-size: 25px;
+        }
+
+        label {
+            font-size: large;
+            font-weight: bold;
+            display: block;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid rgb(7, 30, 110);
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .btnContact {
+
+            padding: 10px;
+            font-size: large;
+            background-color: rgb(7, 30, 110);
+            cursor: pointer;
+            color: white;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .btnDelete {
+            padding: 8px;
+            font-size: 10px;
+            background-color: rgb(168, 29, 29);
+            cursor: pointer;
+            width: 10vh;
+            color: white;
+            border-radius: 10px;
+            margin: 20px auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main">
+        <nav class="navbar">
+            <span onclick="openNav()">&#9776;</span>
+            <li><a href="/mainpage">Home</a></li>
+            <li><a href="/conference">Join-a-Video-Conference</a></li>
+            <li><a href="/chati">Chat</a></li>
+            <li style="position: absolute; right: 100px;"><a href="/calendar">Calendar</a></li>
+            <li style="position: absolute; right: 20px;"><a href="/logout">Logout</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+        </nav>
+    </header>
+
+    <div class="sidenav" id="mysidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1 id="Info">
+            <%= name%>
+        </h1>
+        <a href="/mainpage">About</a>
+        <a href="./home">Join-a-Video-Conference</a>
+        <a href="/chati">Chat</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <section id="contact">
+        <div id="DisplayContact" class="contact-sub">
+            <h1 style="margin-top: 100px;">Contact Info</h1>
+            <% contact.forEach(function(cont){ %>
+                Name : <%=cont.name%>,
+                    Mutual Code : <%=cont.meetingCode%>
+                        <form action="/delete" method="post">
+                            <input type="hidden" name="name" value="<%=cont.name%>" id="">
+                            <button class="btnDelete">Delete</button>
+                        </form>
+                        <% }); %>
+        </div>
+        <div id="Addcontact" class='contact-sub'>
+            <h1 class="h-primary center">Add Contact</h1>
+            <div class="contact-box">
+                <form class='form' action="/contact" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" placeholder="name">
+                    <label for="code">Conference Code:</label>
+                    <input type="text" name="code" placeholder="Meeting Code">
+                    <button class="btnContact">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+<footer style="background-color: black;color: whitesmoke; text-align: center; font-size: 20px; padding: 9px 20px;">All
+    rights &copy; reserved for Meet-chord Only
+</footer>
+<script src="contact.js"></script>
+<script>
+    function openNav() {
+        document.getElementById("mysidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mysidenav").style.width = "0";
+    }
+</script>
+
+</html>

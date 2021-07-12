@@ -34,7 +34,7 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-const url = process.env.MONGODB_URL;
+const url = 'mongodb+srv://Saksham:Saksham.1204@m1.la76v.mongodb.net/Saksham?retryWrites=true&w=majority';
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
 	if (!err) {
 		console.log('Connected');
@@ -398,8 +398,7 @@ const { ObjectId } = require('mongodb').ObjectId;
 
 async function main() {
 	
-	const uri = process.env.MONGODB_URI;
-	const client = new MongoClient(uri, {
+	const client = new MongoClient(url, {
 		useUnifiedTopology: true,
 		useNewUrlParser: true,
 	});

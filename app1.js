@@ -8,7 +8,7 @@ var passportLocalMongoose =
 	require("passport-local-mongoose")
 var User = require("./models/users");
 var Contact = require("./models/contact")
-// var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 const passwordValidator = require('password-validator')
 require('dotenv').config();
 
@@ -555,23 +555,5 @@ io.on('connection', socket => {
 	});
 });
 
-
-
-
-
-
-
-
-
-
-var port_number = server.listen(process.env.PORT || 3000);
-app.listen(port_number);
-
-
-
-
-
-
-
 //listen
-// http.listen(3000, () => console.log('server had started'))
+http.listen(3000, () => console.log('server had started'))
